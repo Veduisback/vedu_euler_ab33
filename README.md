@@ -34,9 +34,8 @@
 - [Security Notice](#security-notice)
 - [Contribution Guide](#contribution-guide)
 - [Roadmap](#roadmap)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
-- [Author](#author)
+
 
 ---
 
@@ -220,7 +219,7 @@ Verify the following tools are installed before proceeding:
 ### 1. Repository Cloning
 
 ```bash
-git clone https://github.com/georgekobaidze/neuralhats
+git clone https://github.com/Veduisback/vedu_euler_ab33
 cd neuralhats
 ```
 
