@@ -32,9 +32,8 @@
 - [Getting Started](#getting-started)
 - [Configuration](#configuration)
 - [Security Notice](#security-notice)
-- [Contribution Guide](#contribution-guide)
 - [Roadmap](#roadmap)
-- [Acknowledgements](#acknowledgements)
+
 
 
 ---
@@ -479,25 +478,9 @@ Planned functionality enhancements for upcoming releases:
 | 🔌 **API Access** | Developer | Direct programmatic access enabling integration of structured debate loops into third-party tools. |
 | 📱 **Mobile App** | Platform | Dedicated mobile software client maintaining full platform styling and capability parity. |
 
-Feature requests can be logged through the [GitHub Issue Tracker](https://github.com/georgekobaidze/neuralhats/issues).
 
 ---
 
-## Contribution Guide
-
-Community contributions are welcome. Use the guidelines below to participate in development.
-
-### Reporting Bugs
-
-Submit detailed reports to the [GitHub Issues](https://github.com/georgekobaidze/neuralhats/issues) page including:
-- Clear issue summaries.
-- Step-by-step reproduction instructions.
-- System information (OS, Python, Node.js, and Ollama version metrics).
-- Diagnostic logs and relevant user interface captures.
-
-### Submitting Feature Requests
-
-Open a proposal inside [GitHub Issues](https://github.com/georgekobaidze/neuralhats/issues) applying the `enhancement` tag. Verify that the suggestion does not duplicate existing entries in the [Roadmap](#roadmap).
 
 ### Code Submission Workflow
 
