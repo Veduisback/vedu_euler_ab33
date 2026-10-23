@@ -132,7 +132,8 @@ The system supports three thematic environments: **Boardroom**, **Workshop**, an
 
 ## System Architecture
 
-![Architecture Diagram](frontend/public/neuralhats-diagram.png)
+<img width="1203" height="673" alt="image" src="https://github.com/user-attachments/assets/089b9aa2-5111-4540-b835-d36ecb85bf9b" />
+
 
 NeuralHats utilizes a three-tier architecture comprising a React client, a FastAPI web application, and a local Ollama model runtime.
 
