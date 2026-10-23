@@ -220,7 +220,7 @@ Verify the following tools are installed before proceeding:
 ### 1. Repository Cloning
 
 ```bash
-git clone https://github.com/georgekobaidze/neuralhats.git
+git clone https://github.com/georgekobaidze/neuralhats
 cd neuralhats
 ```
 
