@@ -2,7 +2,7 @@
 <img width="3178" height="1344" alt="image" src="https://github.com/user-attachments/assets/fbeb463c-cf67-4407-8834-622c450c3965" />
 
 <div align="center">
-  <img src="frontend/public/cover.jpg" alt="NeuralHats" width="100%" />
+  
 
   <p align="center">
   <strong>Six AI personas. One structured debate. Every perspective covered.</strong>
