@@ -543,20 +543,3 @@ Copyright © 2026 Giorgi Kobaidze
 
 ---
 
-## Author
-
-<div align="center">
-  <img src="frontend/public/giorgi.jpg" alt="Giorgi Kobaidze" width="120" style="border-radius: 50%" />
-
-  ### Giorgi Kobaidze
-  *The Builder*
-
-  Software developer and product builder from Georgia, focused on building tools that amplify human reasoning.
-  Two-time hackathon winner continuing the journey with six hats and plenty of coffee.
-
-  [![GitHub](https://img.shields.io/badge/GitHub-neuralhats-181717?logo=github)](https://github.com/georgekobaidze/neuralhats)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-giorgikobaidze-0A66C2?logo=linkedin)](https://www.linkedin.com/in/giorgikobaidze/)
-  [![X](https://img.shields.io/badge/X-georgekobaidze-000000?logo=x)](https://x.com/georgekobaidze)
-  [![DEV.TO](https://img.shields.io/badge/DEV.TO-georgekobaidze-0A0A0A?logo=devdotto)](https://dev.to/georgekobaidze)
-  [![Discord](https://img.shields.io/badge/Discord-community-5865F2?logo=discord)](https://discord.gg/sjUuC8McVn)
-</div>
