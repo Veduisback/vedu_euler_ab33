@@ -16,7 +16,7 @@
   ![React](https://img.shields.io/badge/react-19-61dafb)
   ![Ollama](https://img.shields.io/badge/powered%20by-Ollama-black)
 
-  **[🎥 Demo Video](#)** · **[📖 Article](#)** · **[🐛 Report a Bug](https://github.com/georgekobaidze/neuralhats/issues)**
+  
 
 </div>
 
