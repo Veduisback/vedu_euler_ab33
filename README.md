@@ -4,7 +4,7 @@
   <img src="frontend/public/cover.jpg" alt="NeuralHats" width="100%" />
 
   <p align="center">
-  <strong>Six AI personas. One structured debate. Every perspective covered</strong>
+  <strong>Six AI personas. One structured debate. Every perspective covered.</strong>
 </p>
 
 <br />
@@ -23,174 +23,174 @@
 
 ## Table of Contents
 
-- [About](#about)
-- [Features](#features)
+- [Overview](#overview)
+- [Key Features](#key-features)
 - [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
+- [System Architecture](#system-architecture)
+- [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
 - [Configuration](#configuration)
-- [Security](#security)
-- [How to Contribute](#how-to-contribute)
-- [What's Next](#whats-next)
+- [Security Notice](#security-notice)
+- [Contribution Guide](#contribution-guide)
+- [Roadmap](#roadmap)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Author](#author)
 
 ---
 
-## About
+## Overview
 
-**NeuralHats** brings Edward de Bono's legendary [Six Thinking Hats](https://en.wikipedia.org/wiki/Six_Thinking_Hats) framework to life through AI. Instead of reading about the method, you experience it. Six distinct AI personas debate any topic you choose, each embodying a different mode of thinking.
+**NeuralHats** digitizes Edward de Bono's acclaimed [Six Thinking Hats](https://en.wikipedia.org/wiki/Six_Thinking_Hats) methodology through an interactive AI platform. Rather than reviewing theoretical concepts, users experience dynamic debates where six distinct AI personas deliberate on any given topic, with each persona embodying a specific cognitive mindset.
 
-Each hat is a fully independent AI model persona powered by **Gemma 4** via **Ollama**, with its own system prompt, voice, and reasoning style:
+Every hat operates as an independent AI model persona running **Gemma 4** through **Ollama**, featuring dedicated system prompts, distinct communication styles, and specialized reasoning approaches:
 
-| Hat | Role | Focus |
-|-----|------|-------|
-| ⚪ **White** | The Analyst | Pure facts, data, and objective information |
-| ⚫ **Black** | The Critic | Risks, flaws, and devil's advocacy |
-| 🟢 **Green** | The Creative | Bold ideas, lateral thinking, alternatives |
-| 🔴 **Red** | The Feeler | Emotions, gut instinct, raw reaction |
-| 🟡 **Yellow** | The Optimist | Value, benefits, and opportunity |
-| 🔵 **Blue** | The Facilitator | Manages the process, decides when to stop |
+| Hat | Role | Cognitive Focus |
+|-----|------|-----------------|
+| ⚪ **White** | The Analyst | Objective data, facts, and empirical information |
+| ⚫ **Black** | The Critic | Risk analysis, flaw identification, and critical evaluation |
+| 🟢 **Green** | The Creative | Innovative ideas, alternative approaches, and lateral thinking |
+| 🔴 **Red** | The Feeler | Emotional perspectives, gut reactions, and intuitive responses |
+| 🟡 **Yellow** | The Optimist | Strategic value, potential benefits, and opportunistic outcomes |
+| 🔵 **Blue** | The Facilitator | Process management and termination criteria evaluation |
 
-Debates run for up to **5 rounds**, with the Blue Hat deciding after each round whether the discussion should continue or conclude. At the end, a dedicated **Facilitator AI** synthesises the entire debate into a structured report with a final recommendation.
+Debate sessions proceed for a maximum of **5 rounds**. Following each round, the Blue Hat assesses discussion progress to determine whether to continue or conclude. Upon completion, an independent **Facilitator AI** aggregates the entire exchange into a structured report complete with actionable recommendations.
 
-You can observe as a neutral party, or **play one of the hats yourself**, injecting your own perspective into the debate alongside the AI personas.
+Users can participate as neutral observers or **assume the role of any hat**, contributing human input directly into the round sequence alongside the AI personas.
 
-Three debate contexts are available: **Boardroom**, **Workshop**, and **Research Lab**, each shifting the tone and vocabulary of all six personas to match the setting.
+The system supports three thematic environments: **Boardroom**, **Workshop**, and **Research Lab**, each tailoring the persona vocabularies and interaction styles to suit the designated setting.
 
 ---
 
-## Features
+## Key Features
 
 ### Structured AI Debate Engine
-- **Six independent AI personas:** each hat is a custom-prompted Gemma 4 model with its own reasoning style and voice
-- **Fixed debate order:** White → Black → Green → Red → Yellow → Blue, ensuring every perspective is heard every round
-- **Dynamic rounds:** the Blue Hat (Facilitator) evaluates progress after each round and issues a `CONTINUE` or `STOP` decision, capping at 5 rounds
-- **Context-aware personas:** all six hats adapt their tone to the selected context (Boardroom, Workshop, Research Lab)
+- **Six Independent AI Personas:** Custom-prompted Gemma 4 models running distinct reasoning workflows and dialogue traits.
+- **Ordered Execution Sequence:** Standardized iteration order (White → Black → Green → Red → Yellow → Blue) ensuring comprehensive round participation.
+- **Adaptive Duration Control:** Continuous evaluation by the Blue Hat (Facilitator) issuing `CONTINUE` or `STOP` directives, bounded by a 5-round limit.
+- **Contextual Adaptation:** Real-time alignment of persona vocabularies to the chosen domain context (Boardroom, Workshop, or Research Lab).
 
-### AI-Generated Report
-- After every debate, a dedicated **Facilitator AI** synthesises the full conversation into a structured report
-- Includes a **final recommendation**, key arguments from each hat, and a summary of the discussion
-- **PDF export:** download the full report as a styled PDF with one click
+### Automated Synthesis & Reporting
+- Comprehensive post-debate analysis executed by a dedicated **Facilitator AI** model.
+- Generation of structured summaries containing **final recommendations**, individual hat argument summaries, and full discussion breakdowns.
+- **One-Click PDF Export:** Instant conversion of rendered reports into formatted PDF documents.
 
-### Interactive Participation
-- **Play a hat:** choose any hat before the debate starts; your turn is prompted mid-round alongside the AI personas
-- **Observer mode:** sit back and watch all six AI personas debate without intervening
+### Interactive User Engagement
+- **Direct Persona Roleplay:** Manual assignment of user control to any hat prior to initiation, prompting human input mid-round.
+- **Passive Observation Mode:** Real-time monitoring of autonomous AI multi-agent deliberations.
 
-### Real-Time Streaming
-- Debate progress is delivered via **Server-Sent Events (SSE)** as each hat completes its turn — follow the discussion live without waiting for the entire debate to finish
-- Thinking indicator and live typewriter effect present each completed hat turn in real time
+### Real-Time Event Streaming
+- Live distribution of round progression using **Server-Sent Events (SSE)**.
+- Real-time visual formatting featuring thinking indicators and live typewriter output rendering each hat's turn upon completion.
 
-### Debate Persistence
-- Every debate is stored in a local **SQLite** database
-- Resume a debate from the **History** panel, all previous turns restored in full
-- Delete individual debates or clear history entirely
+### Local Data Persistence
+- Automatic recording of all debate instances into a local **SQLite** database.
+- Full session recovery via the **History** interface with complete turn restoration.
+- Session management capabilities allowing individual item deletion or full history erasure.
 
-### Cinematic UI
-- Animated **Hat Carousel** on the landing page with per-hat typewriter descriptions
-- Neon-accented dark theme with per-hat colour identity throughout the UI
-- Desktop-first interface with a minimum supported width of 768px
-- Hat Guide, About, and What's Next modals
+### Responsive Interface
+- Interactive **Hat Carousel** on the primary interface featuring typewriter-driven persona breakdowns.
+- Neon-accented dark interface incorporating color-coded visual cues mapped to individual hats.
+- Optimized layout targeted at desktop displays (minimum supported width: 768px).
+- Embedded Modal windows providing access to the Hat Guide, Project Background, and Roadmap.
 
 ---
 
 ## Tech Stack
 
-### Frontend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| [React](https://react.dev) | 19 | UI framework |
-| [TypeScript](https://www.typescriptlang.org) | 6 | Type safety |
-| [Vite](https://vite.dev) | 8 | Build tool & dev server |
-| [Tailwind CSS](https://tailwindcss.com) | v4 | Utility-first styling |
-| [React Router](https://reactrouter.com) | 7 | Client-side routing |
-| [react-markdown](https://github.com/remarkjs/react-markdown) | 10 | Markdown rendering in reports |
-| [jsPDF](https://github.com/parallax/jsPDF) + [html2canvas](https://html2canvas.hertzen.com) | latest | PDF export |
+### Frontend Components
+| Technology | Version | Application |
+|------------|---------|-------------|
+| [React](https://react.dev) | 19 | Primary UI Framework |
+| [TypeScript](https://www.typescriptlang.org) | 6 | Type Checking & Code Quality |
+| [Vite](https://vite.dev) | 8 | Build Pipeline & Local Server |
+| [Tailwind CSS](https://tailwindcss.com) | v4 | Utility Styling Framework |
+| [React Router](https://reactrouter.com) | 7 | Navigation Handling |
+| [react-markdown](https://github.com/remarkjs/react-markdown) | 10 | Report Document Formatting |
+| [jsPDF](https://github.com/parallax/jsPDF) + [html2canvas](https://html2canvas.hertzen.com) | Latest | Client-side PDF Generation |
 
-### Backend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| [FastAPI](https://fastapi.tiangolo.com) | 0.115+ | REST API & SSE streaming |
-| [Uvicorn](https://www.uvicorn.org) | 0.30+ | ASGI server |
-| [httpx](https://www.python-httpx.org) | 0.27+ | Async HTTP client for Ollama |
-| [aiosqlite](https://github.com/omnilib/aiosqlite) | 0.20+ | Async SQLite access |
-| [python-dotenv](https://github.com/theskumar/python-dotenv) | 1.0+ | Environment configuration |
+### Backend Infrastructure
+| Technology | Version | Application |
+|------------|---------|-------------|
+| [FastAPI](https://fastapi.tiangolo.com) | 0.115+ | API Gateway & Event Streaming |
+| [Uvicorn](https://www.uvicorn.org) | 0.30+ | ASGI Application Server |
+| [httpx](https://www.python-httpx.org) | 0.27+ | Asynchronous Ollama Integration |
+| [aiosqlite](https://github.com/omnilib/aiosqlite) | 0.20+ | Asynchronous SQLite Driver |
+| [python-dotenv](https://github.com/theskumar/python-dotenv) | 1.0+ | Configuration Loading |
 
-### AI & Infrastructure
-| Technology | Purpose |
-|------------|---------|
-| [Gemma 4](https://ai.google.dev/gemma) | LLM powering all six hat personas |
-| [Ollama](https://ollama.com) | Local model runtime |
-| 7 custom Modelfiles | 6 Per-hat system prompts + 1 dedicated Facilitator for report synthesis |
-| SQLite | Local debate history storage |
-| Server-Sent Events (SSE) | Real-time token streaming to the frontend |
+### AI Model Runtime & Data Layer
+| Component | Function |
+|-----------|----------|
+| [Gemma 4](https://ai.google.dev/gemma) | Base LLM driving persona interactions |
+| [Ollama](https://ollama.com) | Local Model Execution Engine |
+| 7 Custom Modelfiles | 6 Persona-specific System Prompts + 1 Synthesis Engine |
+| SQLite Database | Local Storage Engine for Debate Records |
+| Server-Sent Events (SSE) | Event Channel for Streaming Backend Responses |
 
 ---
 
-## Architecture
+## System Architecture
 
 ![Architecture Diagram](frontend/public/neuralhats-diagram.png)
 
-NeuralHats is split into three layers: a React frontend, a FastAPI backend, and a local Ollama model runtime.
+NeuralHats utilizes a three-tier architecture comprising a React client, a FastAPI web application, and a local Ollama model runtime.
 
-### Request Flow
+### Execution Workflow
 
-1. **Debate creation:** The frontend sends a `POST /debates` request with the topic, context, and optional user hat selection. The backend creates a debate record in SQLite and returns the debate ID.
+1. **Session Initialization:** The client issues a `POST /debates` payload supplying the target topic, domain context, and optional human hat assignment. The server instantiates a SQLite entry and returns the generated debate identifier.
 
-2. **Streaming:** The frontend opens an SSE connection to `GET /debates/{id}/stream`. The Orchestrator begins the debate loop, calling each hat persona in order via the Ollama client.
+2. **Stream Establishment:** The client connects to the event stream at `GET /debates/{id}/stream`. The backend Orchestrator triggers the main execution loop, querying persona endpoints in designated order through the internal Ollama client.
 
-3. **Debate loop:** Each round runs White → Black → Green → Red → Yellow → Blue. Each hat generates its full response via Ollama (non-streaming), then the completed turn is emitted as an SSE event to the frontend and persisted to SQLite.
+3. **Round Execution:** Rounds process sequentially across White → Black → Green → Red → Yellow → Blue. Every persona outputs its turn via Ollama, following which the backend broadcasts the turn payload via SSE and writes the result to SQLite.
 
-4. **Blue Hat decision:** After each round, the Orchestrator parses the Blue Hat's response for a `CONTINUE` or `STOP` token. If `STOP` is issued or 5 rounds have elapsed, the debate ends.
+4. **Termination Processing:** Concluding each round, the Orchestrator checks the Blue Hat output for a `CONTINUE` or `STOP` directive. Meeting a `STOP` instruction or reaching 5 completed rounds initiates session termination.
 
-5. **Report synthesis:** Once the debate concludes, the dedicated Facilitator model receives the full conversation history and produces a structured report with a final recommendation. The report is stored in SQLite and rendered on the Report page.
+5. **Report Generation:** Following termination, the dedicated Facilitator model processes the accumulated conversation transcript to generate a structured evaluation document containing strategic recommendations, which is stored in SQLite and transmitted to the client.
 
-6. **PDF export:** The frontend captures the rendered report via `html2canvas` and generates a downloadable PDF with `jsPDF`.
+6. **Document Export:** The client converts rendered document elements into an offline PDF document using `html2canvas` combined with `jsPDF`.
 
-### Key Design Decisions
+### Architectural Principles
 
-- **One model per hat:** each hat is a separate Ollama model with its own Modelfile, giving complete isolation of persona and system prompt with no cross-contamination between hats.
-- **SSE over WebSockets:** one-directional streaming from server to client is sufficient; SSE is simpler, HTTP-native, and reconnects automatically.
-- **Local-first:** all inference runs on the user's machine via Ollama. No API keys, no cloud dependencies, no data leaving the device.
+- **Isolated Persona Enclaves:** Individual personas leverage dedicated Modelfiles inside Ollama, maintaining isolation between instructions and preventing prompt contamination.
+- **Unidirectional Event Streaming:** Utilizes HTTP-native SSE rather than bi-directional WebSockets to minimize overhead, simplify client state, and provide automatic reconnects.
+- **Private Hardware Runtime:** All model inference executes locally using Ollama. No external API keys or remote cloud transmissions are required.
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```
 neuralhats/
 ├── backend/
 │   ├── modelfiles/
-│   │   └── prompts/          # System prompt .txt files for each hat + facilitator
-│   ├── main.py               # FastAPI app, all HTTP endpoints, SSE route
-│   ├── orchestrator.py       # Debate loop, round management, queue handling
-│   ├── ollama_client.py      # Async HTTP client for Ollama
-│   ├── database.py           # SQLite schema, init, and shared query/write helpers
-│   ├── models.py             # Enums: HatColor, DebateMode, DebateStatus
+│   │   └── prompts/          # System prompt text configurations for hats and facilitator
+│   ├── main.py               # Application entry point, HTTP routing, SSE handlers
+│   ├── orchestrator.py       # Loop execution, round state control, queue handling
+│   ├── ollama_client.py      # Async client abstraction for Ollama interaction
+│   ├── database.py           # Database schemas, initialization, and query utilities
+│   ├── models.py             # Domain Enums (HatColor, DebateMode, DebateStatus)
 │   ├── requirements.txt
 │   └── .env.example
 │
 ├── frontend/
-│   ├── public/               # Static assets (cover, favicons, hat icons, diagram)
+│   ├── public/               # Static web assets (branding, icons, system diagrams)
 │   └── src/
 │       ├── api/
-│       │   └── client.ts     # All backend API calls
+│       │   └── client.ts     # Backend client communication module
 │       ├── components/
-│       │   ├── debate/       # Debate page components
-│       │   ├── landing/      # Landing page components (ParticleNetwork)
-│       │   ├── layout/       # Navbar, HatCarousel
-│       │   ├── modals/       # All modal dialogs
-│       │   └── shared/       # HatIcon, UnsupportedScreen
+│       │   ├── debate/       # Debate session components
+│       │   ├── landing/      # Landing page elements (ParticleNetwork)
+│       │   ├── layout/       # Navigation bar, HatCarousel
+│       │   ├── modals/       # Dialog views
+│       │   └── shared/       # Shared assets (HatIcon, UnsupportedScreen)
 │       ├── hooks/
-│       │   └── useDebateStream.ts  # SSE consumer, full debate state
-│       ├── pages/            # Landing, Debate, Report
-│       ├── types/            # TypeScript interfaces
-│       └── constants.ts      # Hat colours, labels, shared constants
+│       │   └── useDebateStream.ts  # Custom SSE hook managing session state
+│       ├── pages/            # View pages (Landing, Debate, Report)
+│       ├── types/            # TypeScript interface definitions
+│       └── constants.ts      # Visual themes, labels, global constants
 │
-├── setup.ps1 / setup.sh      # Creates Ollama models from Modelfiles
-├── start.ps1 / start.sh      # Starts backend + frontend together
+├── setup.ps1 / setup.sh      # Model setup scripts for Ollama Modelfile build
+├── start.ps1 / start.sh      # Dual-process startup scripts
 └── README.md
 ```
 
@@ -198,24 +198,24 @@ neuralhats/
 
 ## Getting Started
 
-### Prerequisites
+### System Requirements
 
-Before you begin, make sure you have the following installed:
+Verify the following tools are installed before proceeding:
 
-| Tool | Version | Download |
-|------|---------|---------|
+| Dependency | Minimum Version | Download Source |
+|------------|-----------------|-----------------|
 | [Ollama](https://ollama.com) | Latest | https://ollama.com |
 | [Python](https://python.org) | 3.11+ | https://python.org |
 | [Node.js](https://nodejs.org) | 20.19+ or 22.12+ | https://nodejs.org |
 | [Git](https://git-scm.com) | Any | https://git-scm.com |
 
-You will also need approximately **10 GB of free disk space** for the default model (`gemma4:e4b`).
+**Storage Requirement:** Ensure at least **10 GB of available disk space** for downloading the default model image (`gemma4:e4b`).
 
-**GPU recommended:** Gemma 4 runs on CPU but will be significantly slower. An NVIDIA or Apple Silicon GPU will give a much better experience.
+**Hardware Note:** Hardware acceleration via an NVIDIA or Apple Silicon GPU is recommended for optimal inference speed, though CPU execution remains fully functional.
 
 ---
 
-### 1. Clone the repository
+### 1. Repository Cloning
 
 ```bash
 git clone https://github.com/georgekobaidze/neuralhats.git
@@ -224,24 +224,24 @@ cd neuralhats
 
 ---
 
-### 2. Start Ollama
+### 2. Runtime Initialization
 
-Make sure Ollama is running before you proceed. If it isn't already running:
+Ensure the local Ollama daemon is active prior to system launch:
 
-**Windows / macOS**: open the Ollama app from your Applications or system tray.
+**Windows / macOS**: Run the Ollama application through your system interface.
 
 **Linux:**
 ```bash
 ollama serve
 ```
 
-You can verify it's running by visiting http://localhost:11434 in your browser, you should see `Ollama is running`.
+Confirm service readiness by navigating to `http://localhost:11434` in a browser. An active service returns `Ollama is running`.
 
 ---
 
-### 3. Configure (optional)
+### 3. Environment Setup (Optional)
 
-By default, NeuralHats uses `gemma4:e4b` as the base model. If you want to use a different Gemma 4 variant, copy the example env file and edit it:
+By default, the platform runs using `gemma4:e4b`. To select an alternative model architecture, establish a customized configuration file:
 
 **Windows:**
 ```powershell
@@ -252,37 +252,37 @@ notepad backend\.env
 **macOS / Linux:**
 ```bash
 cp backend/.env.example backend/.env
-nano backend/.env  # or your preferred editor
+nano backend/.env  # or alternative text editor
 ```
 
-Available settings in `.env`:
+Configurable parameters in `.env`:
 
 ```env
-NEURALHATS_BASE_MODEL=gemma4:e4b   # Change to e.g. gemma4:26b
-OLLAMA_URL=http://localhost:11434  # Change if Ollama runs on a different port
-FRONTEND_URL=http://localhost:5173 # Change if you run the frontend elsewhere
-DB_PATH=neuralhats.db              # Path to the SQLite database file
+NEURALHATS_BASE_MODEL=gemma4:e4b   # Target base model variant (e.g., gemma4:26b)
+OLLAMA_URL=http://localhost:11434  # Ollama server connection URL
+FRONTEND_URL=http://localhost:5173 # Allowed CORS client origin
+DB_PATH=neuralhats.db              # Relative path for SQLite storage
 ```
 
-> If you skip this step, all settings fall back to their defaults and `.env` is not required to run NeuralHats.
+> If no custom environment file is created, default values are applied automatically.
 
 ---
 
-### 4. Run the setup script
+### 4. System Setup Execution
 
-The setup script will:
-- Check all prerequisites
-- Download the base model from Ollama (you will be prompted to confirm)
-- Create all **7 custom Ollama models** (6 hats + 1 facilitator)
-- Create a Python virtual environment and install dependencies
-- Install frontend Node.js dependencies
+Run the setup utility to execute the following tasks:
+- Validate local development dependencies.
+- Pull the required base model from Ollama (confirmation prompt required).
+- Construct the **7 custom Ollama instances** (6 persona hats + 1 facilitator engine).
+- Initialize the Python virtual environment and install backend packages.
+- Download and link Node.js client packages.
 
 **Windows (PowerShell):**
 ```powershell
 .\setup.ps1
 ```
 
-> **Note:** If you get a script execution error, run this first to allow local scripts:
+> **Script Execution Policy Note:** If execution is restricted on Windows, apply the following command first:
 > ```powershell
 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
@@ -293,27 +293,27 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-The model download may take a while depending on your internet speed:
+Model downloads depend on local connection performance:
 
-| Model | 4-bit | 16-bit | Comfortable GPU |
-|-------|-------|--------|----------------|
-| `gemma4:e2b` | 3.2 GB | 9.6 GB | Anything |
-| `gemma4:e4b` ✅ default | 5 GB | 15 GB | 8–12 GB GPUs |
-| `gemma4:26b` (26B MoE) | 15.6 GB | 48 GB | 24 GB GPU |
-| `gemma4:31b` (31B Dense) | 17.4 GB | 58.3 GB | 32 GB+ GPU |
+| Variant | 4-bit Quantized | 16-bit Unquantized | Recommended VRAM |
+|---------|-----------------|--------------------|------------------|
+| `gemma4:e2b` | 3.2 GB | 9.6 GB | General Systems |
+| `gemma4:e4b` ✅ (Default) | 5.0 GB | 15.0 GB | 8–12 GB VRAM |
+| `gemma4:26b` (26B MoE) | 15.6 GB | 48.0 GB | 24 GB VRAM |
+| `gemma4:31b` (31B Dense) | 17.4 GB | 58.3 GB | 32 GB+ VRAM |
 
-> Ollama runs models in 4-bit quantization by default. CPU-only machines can run any variant but expect slower responses.
+> Ollama applies 4-bit quantization by default. CPU execution works across all variants at lower token generation rates.
 
-When prompted, type `y` to confirm the download.
+When prompted during script execution, enter `y` to approve downloading.
 
-Once setup completes you should see:
+Successful execution outputs:
 ```
 [OK] Setup complete! Run .\start.ps1 to launch NeuralHats.
 ```
 
 ---
 
-### 5. Launch NeuralHats
+### 5. Application Launch
 
 **Windows:**
 ```powershell
@@ -326,21 +326,21 @@ chmod +x start.sh
 ./start.sh
 ```
 
-The start script will:
-1. Verify Ollama is running and all hat models are present
-2. Start the FastAPI backend on **port 8000**
-3. Start the Vite dev server on **port 5173**
-4. Automatically open http://localhost:5173 in your browser
+The start script executes the following automated routines:
+1. Verifies that the Ollama process and custom model images are ready.
+2. Initializes the FastAPI server process on **port 8000**.
+3. Launches the Vite development web server on **port 5173**.
+4. Opens the default web browser to `http://localhost:5173`.
 
-Press `Ctrl+C` at any time to stop both servers.
+Use `Ctrl+C` to terminate active services simultaneously.
 
 ---
 
-### Manual Setup (advanced)
+### Manual Installation Steps (Advanced)
 
-If you prefer to run things individually:
+To manually initialize application layers independently:
 
-**Backend:**
+**Backend Service:**
 ```bash
 cd backend
 python -m venv .venv
@@ -354,81 +354,81 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
-**Frontend** (in a separate terminal):
+**Frontend Application** (in a separate terminal process):
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-**Ollama models** (if not run setup script):
+**Ollama Model Assembly** (if bypassing automated setup scripts):
 ```bash
 ./setup.sh   # or .\setup.ps1 on Windows
 ```
 
 ---
 
-### Troubleshooting
+### Troubleshooting Common Issues
 
-**`Ollama is not running`:** Make sure Ollama is open and running before starting. Check http://localhost:11434.
+**`Ollama is not running`:** Verify that the background daemon is active by querying `http://localhost:11434`.
 
-**`Missing Ollama models`:** Re-run `.\setup.ps1` / `./setup.sh`. The models may not have been created on a previous attempt.
+**`Missing Ollama models`:** Re-run `.\setup.ps1` or `./setup.sh` to complete build operations that failed previously.
 
-**`Python not found` on Windows:** Make sure Python is added to your PATH during installation. Re-install Python and check "Add to PATH".
+**`Python not found` (Windows):** Verify that Python is added to system environment path variables during setup. Re-run the installation package and enable "Add to PATH".
 
-**Slow responses:** This is normal on CPU-only machines. Consider using a smaller model variant (`gemma4:e4b`) or a machine with a dedicated GPU.
+**Reduced Output Generation Rates:** This behavior is expected when running models purely on CPU hardware. Select a lighter model configuration (`gemma4:e4b`) or deploy on dedicated graphics hardware.
 
-**Port already in use:** If port 8000 or 5173 is taken, stop the conflicting process or edit the start script to use different ports.
+**Network Port Conflicts:** If local ports 8000 or 5173 are unavailable, update port references within the application startup scripts.
 
 ---
 
 ## Configuration
 
-### Environment Variables
+### Global Parameters
 
-All configuration lives in `backend/.env`. Copy the example file to get started:
+Service settings are maintained inside `backend/.env`. Initialize configuration files using the provided template:
 
 ```bash
 cp backend/.env.example backend/.env   # macOS / Linux
 Copy-Item backend\.env.example backend\.env  # Windows
 ```
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `NEURALHATS_BASE_MODEL` | `gemma4:e4b` | Gemma 4 variant to use for all hat models. Changed at setup time, re-run `setup.ps1` / `setup.sh` after changing. |
-| `OLLAMA_URL` | `http://localhost:11434` | URL of the Ollama server. Change if Ollama runs on a different host or port. |
-| `FRONTEND_URL` | `http://localhost:5173` | Frontend origin allowed by CORS. Change if you serve the frontend from a different URL. |
-| `DB_PATH` | `neuralhats.db` | Path to the SQLite database file, relative to the `backend/` directory. |
+| Parameter Name | Default Value | Description |
+|----------------|---------------|-------------|
+| `NEURALHATS_BASE_MODEL` | `gemma4:e4b` | Base Gemma 4 model variant. Modifying requires re-running build scripts. |
+| `OLLAMA_URL` | `http://localhost:11434` | Address location for the Ollama runtime. |
+| `FRONTEND_URL` | `http://localhost:5173` | Approved origin for server CORS headers. |
+| `DB_PATH` | `neuralhats.db` | Relative location path for SQLite database files. |
 
-> All variables have hardcoded fallback defaults — `backend/.env` is optional.
+> Defaults are embedded directly within application logic; manual creation of `backend/.env` remains optional.
 
 ---
 
 ### Per-Hat Model Parameters
 
-Each hat model is created with its own temperature and `top_p`, tuned to match its thinking style. These are set in the setup scripts and baked into the Ollama Modelfiles at creation time:
+Every persona configuration utilizes specific temperature and `top_p` sampling settings to encourage appropriate reasoning styles. These settings are compiled directly into Ollama Modelfiles during installation:
 
-| Hat | Temperature | top_p | Rationale |
-|-----|------------|-------|-----------|
-| ⚪ White | 0.3 | 0.90 | Factual, low variance |
-| ⚫ Black | 0.4 | 0.90 | Critical but consistent |
-| 🟢 Green | 0.9 | 0.95 | Creative, high variance |
-| 🔴 Red | 0.85 | 0.95 | Emotional, spontaneous |
-| 🟡 Yellow | 0.6 | 0.90 | Optimistic, balanced |
-| 🔵 Blue | 0.3 | 0.90 | Structured, deterministic |
-| 🎩 Facilitator | 0.2 | 0.90 | Analytical, highly consistent |
+| Hat | Temperature | top_p | Strategic Alignment |
+|-----|-------------|-------|---------------------|
+| ⚪ White | 0.3 | 0.90 | Low variance, analytical output |
+| ⚫ Black | 0.4 | 0.90 | Predictable critical evaluation |
+| 🟢 Green | 0.9 | 0.95 | High entropy, exploratory outputs |
+| 🔴 Red | 0.85 | 0.95 | Expressive, intuitive responses |
+| 🟡 Yellow | 0.6 | 0.90 | Balanced, opportunistic focus |
+| 🔵 Blue | 0.3 | 0.90 | Deterministic control logic |
+| 🎩 Facilitator | 0.2 | 0.90 | Highly consistent analytical aggregation |
 
-All models share a context window of **8192 tokens** (`num_ctx`).
+All models operate using an expanded context threshold of **8192 tokens** (`num_ctx`).
 
-To change these values, edit `setup.ps1` / `setup.sh` and re-run the setup script to recreate the models.
+To modify parameter values, alter `setup.ps1` or `setup.sh` and execute build scripts to recompile custom model profiles.
 
 ---
 
-### Customising Hat Prompts
+### Customizing System Prompts
 
-Each hat's system prompt lives in `backend/modelfiles/prompts/<hat>.txt`. You can edit any prompt to change a hat's persona, tone, or behaviour.
+Persona definition text files reside within `backend/modelfiles/prompts/<hat>.txt`. Editing these text files allows developers to modify persona attributes, dialogue styles, and analytical boundaries.
 
-After editing a prompt, re-run the setup script to recreate the affected models with the updated prompt baked in:
+Recompile model builds after modifying prompt content:
 
 **macOS / Linux:**
 ```bash
@@ -442,86 +442,86 @@ After editing a prompt, re-run the setup script to recreate the affected models 
 
 ---
 
-## Security
+## Security Notice
 
-NeuralHats is a **local-only, single-user tool** and should not be deployed to any server or exposed beyond your own machine. It has no authentication, no rate limiting, and no multi-user isolation — it was never designed for that.
+NeuralHats is engineered explicitly as a **locally contained, single-user environment**. It is not designed for public deployment or multi-tenant hosting. The platform does not incorporate user authentication layers, access throttling, or tenant isolation boundaries.
 
-### What's safe by default
+### Embedded Security Controls
 
-- **No external API calls:** all inference runs locally through Ollama. Your debate topics and content never leave your machine.
-- **No credentials required:** there are no API keys, tokens, or user accounts. Nothing sensitive to leak.
-- **Local SQLite only:** all debate history is stored in a file on your machine. No external database, no cloud sync.
-- **CORS restricted:** the backend only accepts requests from the configured `FRONTEND_URL` (default: `http://localhost:5173`).
-- **Input validation:** all API inputs are validated via Pydantic. Text fields have length limits enforced server-side.
+- **Private Execution Boundaries:** Operations execute locally through Ollama without sending debate data to external services.
+- **Credential-Free Operation:** No secret API keys, authorization tokens, or user state databases are required.
+- **Local Storage Isolation:** Data records remain strictly within local SQLite files.
+- **CORS Source Enforcement:** Origin access is bounded by the configured `FRONTEND_URL` parameter (`http://localhost:5173`).
+- **Schema Validation:** API inputs pass through Pydantic boundary checks featuring defined length constraints.
 
-### What this tool does NOT provide
+### Out-of-Scope Capabilities
 
-- ❌ Authentication or authorisation
-- ❌ Rate limiting
-- ❌ HTTPS (runs plain HTTP locally)
-- ❌ Multi-user isolation
-
----
-
-## What's Next
-
-The foundation is live. Here's where the thinking goes from here.
-
-| Feature | Tag | Description |
-|---------|-----|-------------|
-| 🎙️ **Voice Mode** | Experience | Each hat speaks in a distinct AI voice. Hear the debate unfold, not just read it. |
-| 👥 **Multiplayer Debates** | Collaboration | Invite others to take a hat. Humans and AI thinking together in the same session. |
-| 🎭 **Custom Hat Personas** | Customization | Fine-tune each hat's personality, tone, and reasoning style to match your domain. |
-| 📋 **Debate Templates** | Productivity | Start faster with curated topic packs: business strategy, ethics, product design, and more. |
-| 📄 **Export Formats** | Productivity | Download any debate as a formatted PDF, Markdown file, or structured JSON. |
-| 📊 **Insight Analytics** | Intelligence | Track which hats dominate your debates. Spot blind spots in your thinking patterns over time. |
-| 🔌 **API Access** | Developer | Trigger debates programmatically. Embed structured AI reasoning into your own products. |
-| 📱 **Mobile App** | Platform | A native mobile experience. Debate on the go, with the same depth and polish. |
-
-Have an idea? [Open an issue](https://github.com/georgekobaidze/neuralhats/issues) on GitHub.
+- ❌ User identity authentication or permission authorization systems
+- ❌ API request rate limiting
+- ❌ Encrypted Transport Layer (HTTPS)
+- ❌ Multi-tenant data segregation
 
 ---
 
-## How to Contribute
+## Roadmap
 
-Contributions are welcome! Here's how to get involved.
+Planned functionality enhancements for upcoming releases:
 
-### Reporting bugs
+| Feature | Category | Description |
+|---------|----------|-------------|
+| 🎙️ **Voice Mode** | Experience | Audio output synthesis generating distinct voice profiles for each active hat persona. |
+| 👥 **Multiplayer Debates** | Collaboration | Shared multi-user sessions mixing human contributors and AI models within a single session. |
+| 🎭 **Custom Hat Personas** | Customization | System features allowing fine-grained editing of persona logic, tone, and domain expertise. |
+| 📋 **Debate Templates** | Productivity | Pre-configured debate environments designed for strategy, ethics, product design, and risk analysis. |
+| 📄 **Export Formats** | Productivity | Multi-format compilation output including PDF, raw Markdown, and structured JSON structures. |
+| 📊 **Insight Analytics** | Intelligence | Visual analytics identifying cognitive biases and persona participation balances across historical sessions. |
+| 🔌 **API Access** | Developer | Direct programmatic access enabling integration of structured debate loops into third-party tools. |
+| 📱 **Mobile App** | Platform | Dedicated mobile software client maintaining full platform styling and capability parity. |
 
-Open an issue on [GitHub](https://github.com/georgekobaidze/neuralhats/issues) with:
-- A clear description of the bug
-- Steps to reproduce it
-- Your OS, Python version, Node.js version, and Ollama version
-- Any relevant error messages or screenshots
+Feature requests can be logged through the [GitHub Issue Tracker](https://github.com/georgekobaidze/neuralhats/issues).
 
-### Suggesting features
+---
 
-Open a [GitHub issue](https://github.com/georgekobaidze/neuralhats/issues) with the `enhancement` label. Check the [What's Next](#whats-next) section first, it may already be planned.
+## Contribution Guide
 
-### Submitting a pull request
+Community contributions are welcome. Use the guidelines below to participate in development.
 
-1. **Fork** the repository and create a branch from `develop`:
+### Reporting Bugs
+
+Submit detailed reports to the [GitHub Issues](https://github.com/georgekobaidze/neuralhats/issues) page including:
+- Clear issue summaries.
+- Step-by-step reproduction instructions.
+- System information (OS, Python, Node.js, and Ollama version metrics).
+- Diagnostic logs and relevant user interface captures.
+
+### Submitting Feature Requests
+
+Open a proposal inside [GitHub Issues](https://github.com/georgekobaidze/neuralhats/issues) applying the `enhancement` tag. Verify that the suggestion does not duplicate existing entries in the [Roadmap](#roadmap).
+
+### Code Submission Workflow
+
+1. **Fork** the repository and create a working feature branch off `develop`:
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
-2. **Make your changes.** Keep commits focused and atomic.
+2. **Develop changes.** Keep individual commit payloads focused and descriptive.
 
-3. **Test manually** - start the app with `./start.sh` / `.\start.ps1` and verify your changes work end to end.
+3. **Perform local testing.** Execute end-to-end operational checks using `./start.sh` or `.\start.ps1`.
 
-4. **Open a pull request** against `develop` with a clear description of what you changed and why.
+4. **Submit a Pull Request** pointing to `develop`, detailing modified components and design rationale.
 
-### Code style
+### Development Standards
 
-- **Backend** - standard Python, type hints encouraged, no formatter enforced
-- **Frontend** - TypeScript strict mode, ESLint configured (`npm run lint`), Tailwind utility classes only (no custom CSS unless necessary)
-- Keep components small and focused; reuse existing constants from `constants.ts`
+- **Backend:** Modern Python implementation featuring standard typing structures.
+- **Frontend:** Strict TypeScript validation, ESLint enforcement (`npm run lint`), and utility-first Tailwind CSS classes.
+- **Modularity:** Maintain focused component boundaries and import global layout declarations from `constants.ts`.
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for full details.
+This source code is made available under the terms of the **MIT License**. Review the [LICENSE](LICENSE) file for complete text.
 
 Copyright © 2026 Giorgi Kobaidze
 
@@ -529,15 +529,15 @@ Copyright © 2026 Giorgi Kobaidze
 
 ## Acknowledgements
 
-- **[Edward de Bono](https://en.wikipedia.org/wiki/Edward_de_Bono)** — for inventing the Six Thinking Hats framework that this entire project is built around. The method is 40 years old and still sharper than most modern thinking tools.
+- **[Edward de Bono](https://en.wikipedia.org/wiki/Edward_de_Bono)** — Creator of the Six Thinking Hats framework that underpins the operational model of this platform.
 
-- **[Google DeepMind](https://deepmind.google)** — for Gemma 4, the open model that powers every hat and the facilitator.
+- **[Google DeepMind](https://deepmind.google)** — Creators of Gemma 4, the foundation model driving persona interactions across the application.
 
-- **[Ollama](https://ollama.com)** — for making local LLM inference as simple as `ollama run`. Without it, NeuralHats wouldn't exist in its current form.
+- **[Ollama](https://ollama.com)** — Developers of the open-source local inference engine facilitating local multi-agent deployment.
 
-- **[DEV Community](https://dev.to)** and **[Major League Hacking (MLH)](https://mlh.io)** — for running the [Gemma 4 Challenge](https://dev.to/devteam/join-the-gemma-4-challenge-3000-prize-pool-for-ten-winners-23in) that sparked this project.
+- **[DEV Community](https://dev.to)** and **[Major League Hacking (MLH)](https://mlh.io)** — Organizers of the [Gemma 4 Challenge](https://dev.to/devteam/join-the-gemma-4-challenge-3000-prize-pool-for-ten-winners-23in), which inspired the creation of this project.
 
-- **[FastAPI](https://fastapi.tiangolo.com)**, **[React](https://react.dev)**, **[Vite](https://vite.dev)**, **[Tailwind CSS](https://tailwindcss.com)** — the open-source stack that made building this fast and enjoyable.
+- **[FastAPI](https://fastapi.tiangolo.com)**, **[React](https://react.dev)**, **[Vite](https://vite.dev)**, **[Tailwind CSS](https://tailwindcss.com)** — Open-source frameworks utilized across the system stack.
 
 ---
 
@@ -549,8 +549,8 @@ Copyright © 2026 Giorgi Kobaidze
   ### Giorgi Kobaidze
   *The Builder*
 
-  Software developer and product builder from Georgia, with a passion for tools that amplify human thinking.
-  Two-time hackathon winner chasing a third with six hats and a lot of coffee.
+  Software developer and product builder from Georgia, focused on building tools that amplify human reasoning.
+  Two-time hackathon winner continuing the journey with six hats and plenty of coffee.
 
   [![GitHub](https://img.shields.io/badge/GitHub-neuralhats-181717?logo=github)](https://github.com/georgekobaidze/neuralhats)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-giorgikobaidze-0A66C2?logo=linkedin)](https://www.linkedin.com/in/giorgikobaidze/)
