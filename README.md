@@ -521,13 +521,7 @@ Open a proposal inside [GitHub Issues](https://github.com/georgekobaidze/neuralh
 
 ---
 
-## License
 
-This source code is made available under the terms of the **MIT License**. Review the [LICENSE](LICENSE) file for complete text.
-
-Copyright © 2026 Giorgi Kobaidze
-
----
 
 ## Acknowledgements
 
